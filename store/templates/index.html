@@ -6,8 +6,14 @@
     <title>Front_Page</title>
 </head>
 <body>
-    <h1>
-        Hello Everyone 
-    </h1>
+    {% for prd in products%}
+        <table>
+            <tr>
+                <td>{{prd.name}}</td>
+                <td>{{prd.price}}</td>
+                <td>{{prd.category}}</td>
+            </tr>
+        </table>
+    {% endfor %}
 </body>
 </html>
