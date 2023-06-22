@@ -5,26 +5,38 @@
         <div class="p-4 m-4">
             <div class="col-lg-5 mx-auto border rounded p-2 pt-3">
                 <h3 class="alert alert-light border rounded">Create an account</h3>
-                <form action="">
-                    <!--Name-->
-                    <div class="form-group">
-                        <label for="">Name</label>
-                        <input type="text" name="name" id="" class="form-control form-control-sm" placeholder="Your Name" >
-                      </div>
-                    <!--email-->
-                    <div class="form-group">
-                      <label for="">Email</label>
-                      <input type="email" name="email" id="" class="form-control form-control-sm" placeholder="example@gmail.com" >
+                <form action="/signup/" method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
                     </div>
-                    <!--password-->
+                    {% endif %}
+
+                    <!--First Name-->
                     <div class="form-group">
-                      <label for="">Password</label>
-                      <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="*******" >
+                        <label for="">First Name</label>
+                        <input type="text" name="first_name" class="form-control form-control-sm" placeholder="Your First Name">
                     </div>
-                    <!--Mobile Number-->
+                    <!--Last Name-->
                     <div class="form-group">
-                        <label for="">Ph. No.</label>
-                        <input type="Number" name="phone" id="" class="form-control form-control-sm" maxlength="10" placeholder"1234567890" >
+                        <label for="">Last Name</label>
+                        <input type="text" name="last_name" class="form-control form-control-sm" placeholder="Your Last Name">
+                    </div>
+                    <!--Email-->
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" required name="email" class="form-control form-control-sm" placeholder="example@gmail.com">
+                    </div>
+                    <!--Password-->
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" name="password" class="form-control form-control-sm" placeholder="*******">
+                    </div>
+                    <!--Phone Number-->
+                    <div class="form-group">
+                        <label for="">Phone Number</label>
+                        <input type="number" name="phone" class="form-control form-control-sm" placeholder="1234567890">
                     </div>
 
                     <div class="form-group mt-1 pt-2">
@@ -35,4 +47,3 @@
         </div>
     </div>
 {% endblock content %}
-    
