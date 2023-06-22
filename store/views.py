@@ -20,3 +20,7 @@ def index(request):
     
     return render(request, 'index.html' , data)
     # return render(request,'orders/order.html')
+
+
+def signup(request):
+    return render(request, 'signup.html')
